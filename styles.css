@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Montserrat", sans-serif; 
+    background: black;
+    color:white;
+}
+
+section {
+    min-height: 100vh;
+    width: 80%; 
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo {
+    max-width: 100%; /* Garante que a logo não ultrapasse a largura do contêiner pai */
+    height: 110px; /* Mantém a proporção original da logo */
+}
+
+.title {
+    font-size: 2rem;
+    margin: 2rem 0rem;
+    min-height: 10vh;
+    width: 80%; 
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.faq {
+    max-width: 700px;
+    margin-top: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid white;
+    cursor: pointer;
+}
+
+.question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.question h3{
+    font-size: 1.1rem;
+}
+
+.answer{
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 1.4s ease;
+}
+
+.answer p{
+    padding-top: 1rem;
+    line-height: 1.6;
+    font-size: 1.0rem;
+    } 
+
+.faq.active .answer {
+    max-height: 300px; /* AQUI DA PARA AUMENTAR O TAMANHO DE ONDE A PERGUNTA VAI SE ENCAIXAR */
+    animation: fade 1s ease-in-out;
+}
+
+.svg {
+    transition: transform 0.5s ease-in;
+}
+
+.faq.active .svg {
+    transform: rotate(180deg);
+}
+
+.imagem {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.rodape {
+    font-size: 1.5rem;
+    margin: 2rem 0rem;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    background-color: black; /* Adicione um plano de fundo se desejar */
+}
+
+
+@keyframes fade {
+    from{
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
